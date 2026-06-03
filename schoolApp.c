@@ -9,6 +9,44 @@ struct student {
     float score;
 };
 
+struct student database[500];
+int studentCount = 0;
+
+//This is add student function:
+void addStudent() {
+    if (studentCount >= 500) {
+        printf("\n[Error] Database is full! Cannot add more students.\n");
+        return;
+    }
+
+    struct student newStudent;
+
+    printf("\n--- Add New Student ---\n");
+    
+    printf("Enter ID (e.g., 101): ");
+    scanf("%d", &newStudent.id);
+
+    printf("Enter Full Name: ");
+    scanf(" %[^\n]s", newStudent.names);
+
+    printf("Enter Date of Birth (DD/MM/YYYY): ");
+    scanf(" %[^\n]s", newStudent.dob);
+
+    printf("Enter Department: ");
+    scanf(" %[^\n]s", newStudent.department);
+
+    printf("Enter General Score (0-100): ");
+    scanf("%f", &newStudent.score);
+
+    
+    database[studentCount] = newStudent;
+    
+
+    studentCount++;
+
+    printf("\n[Success] Student added to the database!\n");
+}
+
 int main(){
 
     int choice;
