@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct student {
+    int id;
+    char names[50];
+    char dob[50];
+    char department[50];
+    float score;
+};
+
 int main(){
 
     int choice;
