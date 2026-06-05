@@ -50,7 +50,7 @@ void addStudent() {
 
 //This is the Display function
 void displayAllStudents(){
-    if (!studentCount == 0){
+    if (studentCount == 0){
         printf("\nNo students in the database add student: \n");
         return;
     }
