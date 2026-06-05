@@ -43,8 +43,32 @@ void addStudent() {
     
 
     studentCount++;
+    
 
     printf("\n[Success] Student added to the database!\n");
+}
+
+//This is the Display function
+void displayAllStudents(){
+    if (!studentCount == 0){
+        printf("\nNo students in the database add student: \n");
+        return;
+    }
+
+    printf("\n---All The Students Here---\n");
+    //here: the table header.
+
+    printf("|%-10s|%-30s|%-25s|%-25s|%-15s|","ID", "NAME", "DOB", "DEPARTMENT", "SCORE");
+
+    for(int i = 0; i <= studentCount; i++){
+        printf("\n|%-10d|%-30s|%-25s|%-25s|%-15f|\n",
+        database[i].id,
+        database[i].names,
+        database[i].dob,
+        database[i].department,
+        database[i].score);
+    }
+    printf("---------------------------------------------------------------------------------------------------------------");
 }
 
 int main(){
@@ -62,7 +86,6 @@ int main(){
         printf("7. Exit.\n");
         printf("Enter your choice (1-7): ");
         
-        // FIX 1: You must read the input from the keyboard into the 'choice' variable
         scanf("%d", &choice);
         
         switch (choice) {
@@ -71,7 +94,7 @@ int main(){
                 break;
 
             case 2:
-                printf("\n---You chose: Display all students - we will build this soon!---\n");
+                displayAllStudents();
                 break;
 
             case 3:
